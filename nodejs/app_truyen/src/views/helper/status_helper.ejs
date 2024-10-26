@@ -1,0 +1,17 @@
+<% 
+     handleRenderStatus = function(id, status, prefix){
+        let icon = "minus"
+        let color = "btn-danger"
+        if(status == "active"){
+            icon = "check"
+            color = "btn-success"
+        }
+        // Show notification
+
+        return 	`<a href="javascript:handleStatus('${id}','${status}','${prefix}')" class="rounded-circle btn btn-sm ${color}"><i class="fas fa-${icon}"></i></a>`
+    }
+
+
+%>
+
+

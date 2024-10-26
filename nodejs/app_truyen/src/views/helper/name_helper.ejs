@@ -1,0 +1,13 @@
+<% 
+    handleRenderName = (name,keyword) =>{
+        if(keyword !="" && keyword != undefined){
+            let keywordReg = new RegExp(keyword,'ig')
+            let newName = name.replace(keywordReg,(match) => {
+                return `<span class="highlight">${match}</span>`
+            })
+            return `<td class="text-center"><span>${newName}</span></td>`
+        }
+        return `<td class="text-center"><span>${name}</span></td>`
+    }
+
+%>

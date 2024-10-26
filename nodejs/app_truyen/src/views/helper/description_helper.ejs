@@ -1,0 +1,23 @@
+<% 
+    handleDescription = (description) => {
+    // Tách description thành các từ
+    const words = description.split(' ');
+    
+    // Xác định số từ tối đa (10 từ mỗi hàng, 2 hàng)
+    const maxWords = 20;
+    
+    // Kiểm tra nếu số từ vượt quá giới hạn
+    let truncatedDescription = words.slice(0, maxWords).join(' ');
+
+    // Thêm dấu "..." nếu vượt quá giới hạn từ
+    if (words.length > maxWords) {
+        truncatedDescription += '...';
+    }
+
+    // Thêm ngắt dòng vào mỗi 10 từ
+    const formattedDescription = truncatedDescription.replace(/((?:\S+\s+){10})/g, '$1<br>');
+
+    return `<td class="text-center"><span>${formattedDescription}</span></td>`;
+}
+
+%>

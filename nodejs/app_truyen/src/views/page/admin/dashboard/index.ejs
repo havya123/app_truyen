@@ -1,0 +1,84 @@
+<% 
+  let listBox = [
+    {
+      'name': 'New Orders',
+      'amount': 150,
+      'icon': 'ion-bag',
+      'color': 'bg-info'
+    },
+    {
+      'name': 'Bounce Rate',
+      'amount': 53,
+      'icon': 'ion-stats-bars',
+      'color':'bg-success'
+    },
+    {
+      'name': 'User Registrations',
+      'amount': 44,
+      'icon': 'ion-person-add',
+      'color':'bg-warning'
+    },
+    {
+      'name': 'Unique Visitors',
+      'amount': 65,
+      'icon': 'ion-pie-graph',
+      'color': 'bg-danger'
+    },
+  ]
+
+%>
+
+<section class="content">
+    <div class="container-fluid">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <% for( let index = 0; index < listBox.length; index++ ) { %>
+              <% if (index == 1) { %>
+                <div class="col-lg-3 col-6">
+                  <!-- small box -->
+                  <div class="small-box <%= listBox[index].color %>">
+                    <div class="inner">
+                      <h3><%=listBox[index].amount%><sup style="font-size: 20px">%</sup></h3>
+        
+                      <p><%=listBox[index].name %></p>
+                    </div>
+                    <div class="icon">
+                      <i class="ion <%=listBox[index].icon%>"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  </div>
+                </div>
+                <% }else{ %>
+                  <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box <%= listBox[index].color %>">
+                      <div class="inner">
+                        <h3><%=listBox[index].amount%></h3>
+          
+                        <p><%=listBox[index].name %></p>
+                      </div>
+                      <div class="icon">
+                        <i class="ion <%=listBox[index].icon %>"></i>
+                      </div>
+                      <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                  </div>
+                  <% } %>
+
+          
+          <% } %>
+
+        
+        <!-- ./col -->
+       
+        <!-- ./col -->
+        
+        <!-- ./col -->
+      </div>
+      <!-- /.row -->
+      <!-- Main row -->
+     
+      <!-- /.row (main row) -->
+    </div><!-- /.container-fluid -->
+  </section>
+
